@@ -33,7 +33,6 @@ It should be possible to create an empty tree:
 
 ```bash
 const tree = new Tree();
-console.log(tree.value)
 ```
 
 It should be possible to add child nodes by either supplying them during
@@ -100,5 +99,31 @@ following order instead:
       / \   \
      4   5   6
 
-Your task, then, will be to write a number of methods that take advantage of
-these methods of traversal. 
+Your task, then, will be to write a number of methods that take advantage of these
+traversal techniques.
+
+## Part III
+We're going to refactor our `Tree` class a bit to make navigating it a bit easier.
+In this part, you'll be adding the ability for eac node in the tree to determine who
+its parent is. That is given this tree:
+```bash
+
+> const tree = new Tree(1, [
+>   new Tree(2),
+>   new Tree(3)
+> ]);
+
+> const node = tree.children[0];
+```
+
+Asking for `node`'s parent should return the node with a value of 1. Afterward, you'll
+be writing a method to calculate how to get from one point in the tree to another.
+
+For example:
+```bash
+> tree.pathTo(3, 2)
+```
+
+Would tell you how to get to the node with a value of 3 to the node with a value of 2. The 
+reason for this particular argument order is that omitting the second `from` argument will
+assume that you are starting at the top of the tree.
