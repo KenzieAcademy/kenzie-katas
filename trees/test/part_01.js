@@ -47,6 +47,7 @@ describe("Part I: Creating Trees", () => {
     it("`addChild` should create a new tree and append it to children", () => {
       tree.addChild(2);
       expect(tree.children).to.be.an("array").that.has.a.lengthOf(1);
+      expect(tree.children[0]).to.be.an.instanceOf(Tree);
       expect(tree.children[0].value).to.equal(2);
     });
 
